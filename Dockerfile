@@ -45,7 +45,7 @@ RUN set -e; \
   chown -R $SOLR_USER:$SOLR_GROUP /opt/solr
 
 COPY scripts /opt/docker-solr/scripts
-RUN chown -R $SOLR_USER:$SOLR_GROUP /opt/docker-solr /opt/mysolrhome
+RUN chown -R $SOLR_USER:$SOLR_GROUP /opt/docker-solr /opt/mysolrhome && chmod +x /opt/docker-solr/scripts/*
 
 EXPOSE 8983
 WORKDIR /opt/solr
